@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Shopping App</title>
+    <link rel="stylesheet"
+          href="{% static 'shop/css/style.css' %}">
+</head>
+<body>
+    <h1>My Shopping Store</h1>
+    {% for product in products %}
+        <article>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <strong>₹{{ product.price }}</strong>
+        </article>
+    {% empty %}
+        <p>No products are available yet.</p>
+    {% endfor %}
+    <script src="{% static 'shop/js/cart.js' %}"></script>
+</body>
+</html>
